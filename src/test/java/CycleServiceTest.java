@@ -19,3 +19,21 @@ public class CycleServiceTest {
         // производим проверку (сравниваем ожидаемый и фактический):
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldCalculateTwoMonths() {
+        CycleService service = new CycleService();
+
+        // подготавливаем данные:
+        int income = 100_000;
+        int expenses = 60_000;
+        int threshold = 150_000;
+        int expected = 2;
+
+        // вызываем целевой метод:
+        int actual = service.calculate(income, expenses, threshold);
+
+        // производим проверку (сравниваем ожидаемый и фактический):
+        Assertions.assertEquals(expected, actual);
+    }
+}
